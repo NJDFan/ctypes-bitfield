@@ -15,7 +15,7 @@ setup(
 	# the version across setup.py and the project code, see
 	# http://packaging.python.org/en/latest/tutorial.html#version
 	description='Ctypes Register Bitfields',
-	version='0.3.1',
+	version='0.3.2',
 	
 	long_description=long_description,
 
