@@ -52,7 +52,7 @@ class CacheLine(object):
 		
 		assert rng.span() == len(data)
 		self.lastread = self.lastupdate = time()
-		self.data = data
+		self.data = bytearray(data)
 		self.range = rng
 		
 	def write(self, rng, data):
