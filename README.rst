@@ -126,9 +126,9 @@ Repeating the previous example with a CachedHandler would add::
     >>> sock = socket.create_connection(('1.2.3.4', 80))
     >>> basehandler = SerialHandler(sock)
     >>> cachedhandler = CachedHandler(
-	... 	handler=basehandler,
-	... 	timeout=2.5
-	... )
+    ...     handler=basehandler,
+    ...     timeout=2.5
+    ... )
     >>> rs = remotestruct.Remote(DataStructure, cachedhandler)
     >>> rs.flags
     5
@@ -156,19 +156,27 @@ performance; this can be essential to prevent destructive register accesses.
 Changelog
 ---------
 
+0.3.3
+    Updated collections.MutableSet to collections.abc.MutableSet to avoid
+    deprecation.
+    
+0.3.2
+    Fixed problem with the CachedHandler sometimes getting bytes instead of
+    bytearray.
+
 0.3.1
-	Fixed some packaging problems.
+    Fixed some packaging problems.
 
 0.3.0
-	Turned the .items iterator into a list.  It's never going to be so long
-	that the overhead is a problem, and it makes interactive use from the
-	command line so much easier.
-	
-	Added the CachedHandler, and moved bitfield and remotestruct from being
-	single modules to being full packages.
+    Turned the .items iterator into a list.  It's never going to be so long
+    that the overhead is a problem, and it makes interactive use from the
+    command line so much easier.
+    
+    Added the CachedHandler, and moved bitfield and remotestruct from being
+    single modules to being full packages.
 
 Works under Python 2.7+ and 3.2+
 
 :author:    Rob Gaddi, Highland Technology, Inc.
-:date:      24-Aug-2015
-:version:   0.3.0
+:date:      28-May-2020
+:version:   0.3.3
