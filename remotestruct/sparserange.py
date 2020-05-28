@@ -10,8 +10,13 @@ is inclusive on the low end, and exlusive on the high end.
 
 from __future__ import print_function
 from warnings import warn
-from collections import MutableSet
 from bisect import bisect_left, bisect_right
+
+try:
+	# Python 3.3 and later
+	from collections.abc import MutableSet
+except ImportError:
+	from collections import MutableSet
 
 #######################################################################
 # Python 2/3 compatibility section
